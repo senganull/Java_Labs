@@ -18,3 +18,13 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+// build.gradle.kts に追記
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType<JavaExec> {
+    systemProperty("file.encoding", "UTF-8")
+}
